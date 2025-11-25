@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.env
+venv/
+.venv/
+env/
+.idea/
+.vscode/
+
+# Node
+node_modules/
+dist/
+.DS_Store
+
+# EchoOS Data (don't commit large models or private DBs)
+data/models/*.gguf
+data/embeddings/
+data/face_encodings.npz
+data/memdb.sqlite
+
+# ISO Build
+iso_build/
+*.iso

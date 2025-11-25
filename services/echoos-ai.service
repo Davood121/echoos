@@ -1,0 +1,15 @@
+[Unit]
+Description=EchoOS AI Core
+After=network.target
+
+[Service]
+Type=simple
+User=echoos
+Group=echoos
+WorkingDirectory=/opt/echoos
+ExecStart=/usr/bin/python3 /opt/echoos/ai_core/launcher.py
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

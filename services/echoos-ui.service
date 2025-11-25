@@ -1,0 +1,17 @@
+[Unit]
+Description=EchoOS Aurora UI
+After=echoos-ai.service network.target
+
+[Service]
+Type=simple
+User=echoos
+Group=echoos
+WorkingDirectory=/opt/echoos/web_ui
+# Assuming a build step has happened or running dev server
+# For production, serve the 'dist' folder with a static server or nginx
+ExecStart=/usr/bin/npm run preview -- --port 3000 --host
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
