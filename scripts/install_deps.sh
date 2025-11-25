@@ -12,7 +12,7 @@ sudo apt install -y \
   python3 python3-venv python3-pip git build-essential cmake \
   libopenblas-dev libblas-dev liblapack-dev libatlas-base-dev \
   libssl-dev libffi-dev pkg-config curl wget unzip \
-  ffmpeg v4l-utils \
+  ffmpeg v4l-utils portaudio19-dev python3-pyaudio \
   xdotool xorg-dev libx11-dev libxtst-dev libxrandr-dev \
   libgtk-3-dev \
   nginx \
@@ -49,6 +49,14 @@ if ! command -v go &> /dev/null; then
     echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.bashrc
 else
     echo "Go is already installed."
+fi
+
+# --- Ollama (AI Runtime) ---
+echo "Installing Ollama..."
+if ! command -v ollama &> /dev/null; then
+    curl -fsSL https://ollama.com/install.sh | sh
+else
+    echo "Ollama is already installed."
 fi
 
 # --- Python Dependencies ---

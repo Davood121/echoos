@@ -16,3 +16,9 @@ sounddevice
 websockets
 requests
 feedparser
+SpeechRecognition
+pyaudio
+pyttsx3
+gTTS
+ollama
+duckduckgo-search
